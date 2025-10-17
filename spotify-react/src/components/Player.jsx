@@ -36,7 +36,7 @@ const Player = (props) => {
 
   return (
     <div className="container-fluid fixed-bottom bg-container pt-1 mt-4">
-      {/* Elemento audio nascosto per la riproduzione */}
+    
       {currentSong && (
         <audio
           ref={audioRef}
@@ -65,7 +65,7 @@ const Player = (props) => {
             )}
             
             {/* Controlli player */}
-            <Col xs={12} md={currentSong ? 6 : 9} className="text-center">
+            <Col xs={12} md={currentSong ? 6 : 9} className="text-center mx-auto">
               <div className="playerControls">
                 <div className="d-flex justify-content-center">
                   <a href="#" className="mx-2">
