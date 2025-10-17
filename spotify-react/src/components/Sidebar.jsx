@@ -41,114 +41,57 @@ const Sidebar = (props) => {
             <Navbar.Toggle aria-controls="sidebar-nav" className="d-md-none" />
           </div>
           
-          {/* Contenuto della navbar che si espande/contrae */}
-          <div className="d-none d-md-block w-100">
-            {/* Link di navigazione e barra di ricerca sempre visibili su desktop */}
-            <Nav className="flex-column w-100 mt-3">
-              <Nav.Item className="my-2">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `nav-item nav-link d-flex align-items-center ${isActive ? "active" : ""}`
-                  }
-                  onClick={() => dispatch(clearSearchResults())}
-                >
-                  <FaHome className="fs-3"/>&nbsp; Home
-                </NavLink>
-              </Nav.Item>
-              <Nav.Item>
-                <NavLink
-                  to="/library"
-                  className={({ isActive }) =>
-                    `nav-item nav-link d-flex align-items-center ${isActive ? "active" : ""}`
-                  }
-                >
-                  <FaBookOpen className="fs-3" />&nbsp; La tua Libreria
-                </NavLink>
-              </Nav.Item>
-              <Nav.Item className="mt-3">
-                <Form onSubmit={handleSearchSubmit}>
-                  <div className="d-flex">
-                    <FormControl
-                      type="text"
-                      placeholder="Search"
-                      aria-label="Search"
-                      value={query}
-                      onChange={handleSearchChange}
-                      disabled={loading}
-                      className="text-black bg-white"
-                    />
-                    <Button 
-                      variant="outline-secondary" 
-                      type="submit" 
-                      disabled={loading || !query.trim()}
-                      className="d-flex align-items-center justify-content-center"
-                    >
-                      {loading ? (
-                        <Spinner animation="border" size="sm" />
-                      ) : (
-                        <FaSearch />
-                      )}
-                    </Button>
-                  </div>
-                </Form>
-              </Nav.Item>
-            </Nav>
-          </div>
-          
-          {/* Versione mobile che si espande/contrae */}
-          <Navbar.Collapse id="sidebar-nav" className="d-md-none w-100">
-            <Nav className="flex-column w-100 mt-3">
-              <Nav.Item className="my-2">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `nav-item nav-link d-flex align-items-center ${isActive ? "active" : ""}`
-                  }
-                  onClick={() => dispatch(clearSearchResults())}
-                >
-                  <FaHome className="fs-3"/>&nbsp; Home
-                </NavLink>
-              </Nav.Item>
-              <Nav.Item>
-                <NavLink
-                  to="/library"
-                  className={({ isActive }) =>
-                    `nav-item nav-link d-flex align-items-center ${isActive ? "active" : ""}`
-                  }
-                >
-                  <FaBookOpen className="fs-3" />&nbsp; La tua Libreria
-                </NavLink>
-              </Nav.Item>
-              <Nav.Item className="mt-3">
-                <Form onSubmit={handleSearchSubmit}>
-                  <div className="d-flex">
-                    <FormControl
-                      type="text"
-                      placeholder="Search"
-                      aria-label="Search"
-                      value={query}
-                      onChange={handleSearchChange}
-                      disabled={loading}
-                      className="text-black bg-white"
-                    />
-                    <Button 
-                      variant="outline-secondary" 
-                      type="submit" 
-                      disabled={loading || !query.trim()}
-                      className="d-flex align-items-center justify-content-center"
-                    >
-                      {loading ? (
-                        <Spinner animation="border" size="sm" />
-                      ) : (
-                        <FaSearch />
-                      )}
-                    </Button>
-                  </div>
-                </Form>
-              </Nav.Item>
-            </Nav>
-          </Navbar.Collapse>
+          {/* Link di navigazione e barra di ricerca */}
+          <Nav className="flex-column w-100 mt-3">
+            <Nav.Item className="my-2">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `nav-item nav-link d-flex align-items-center ${isActive ? "active" : ""}`
+                }
+                onClick={() => dispatch(clearSearchResults())}
+              >
+                <FaHome className="fs-3"/>&nbsp; Home
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item>
+              <NavLink
+                to="/library"
+                className={({ isActive }) =>
+                  `nav-item nav-link d-flex align-items-center ${isActive ? "active" : ""}`
+                }
+              >
+                <FaBookOpen className="fs-3" />&nbsp; La tua Libreria
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item className="mt-3">
+              <Form onSubmit={handleSearchSubmit}>
+                <div className="d-flex">
+                  <FormControl
+                    type="text"
+                    placeholder="Search"
+                    aria-label="Search"
+                    value={query}
+                    onChange={handleSearchChange}
+                    disabled={loading}
+                    className="text-black bg-white"
+                  />
+                  <Button 
+                    variant="outline-secondary" 
+                    type="submit" 
+                    disabled={loading || !query.trim()}
+                    className="d-flex align-items-center justify-content-center"
+                  >
+                    {loading ? (
+                      <Spinner animation="border" size="sm" />
+                    ) : (
+                      <FaSearch />
+                    )}
+                  </Button>
+                </div>
+              </Form>
+            </Nav.Item>
+          </Nav>
           
           {/* Pulsanti di autenticazione sempre visibili in fondo */}
           <div className="nav-btn d-flex flex-column mx-auto mt-auto mb-3" style={{ marginTop: "auto" }}>
