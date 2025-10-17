@@ -28,6 +28,9 @@ const Sidebar = (props) => {
     <aside className="col col-2">
       <Navbar expand="md" className="flex-column fixed-left h-100">
         <Container className="flex-column align-items-start h-100 d-flex">
+          
+          {/* link nav*/}
+          <Nav className="flex-column w-100 mt-1">
           {/* Logo */}
           <Link className="navbar-brand" to="/">
             <img
@@ -37,9 +40,6 @@ const Sidebar = (props) => {
               height="40"
             />
           </Link>
-          
-          {/* Link di navigazione e barra di ricerca SUBITO SOTTO IL LOGO */}
-          <Nav className="flex-column w-100 mt-3">
             <Nav.Item className="my-2">
               <NavLink
                 to="/"
