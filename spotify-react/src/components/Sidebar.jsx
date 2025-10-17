@@ -79,7 +79,7 @@ const Sidebar = (props) => {
                   <Button 
                     variant="outline-secondary" 
                     type="submit" 
-                    disabled={loading || !query.trim()}
+                    disabled={loading}
                     className="d-flex align-items-center justify-content-center"
                   >
                     {loading ? (
@@ -93,8 +93,8 @@ const Sidebar = (props) => {
             </Nav.Item>
           </Nav>
           
-          {/* Pulsanti di autenticazione sempre visibili in fondo */}
-          <div className="nav-btn d-flex flex-column mx-auto mt-auto mb-3" style={{ marginTop: "auto" }}>
+          {/* buttons bottom sidebar */}
+          <div className="nav-btn d-flex flex-column mx-auto mt-3 mb-3">
             <Button className="signup-btn mb-2" type="button">
               Sign Up
             </Button>
