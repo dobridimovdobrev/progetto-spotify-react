@@ -94,7 +94,7 @@ const Sidebar = (props) => {
           <Navbar.Toggle aria-controls="sidebar-nav" className="d-md-none mt-2 align-self-end" />
           
           {/* buttons bottom sidebar */}
-          <div className="nav-btn d-flex flex-column mx-auto mt-3 mb-3">
+          <div className="nav-btn d-flex flex-column mx-auto mt-3 mb-3 gap-3">
             <Button className="signup-btn mb-2" type="button">
               Sign Up
             </Button>
