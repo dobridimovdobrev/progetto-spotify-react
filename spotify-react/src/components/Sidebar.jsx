@@ -28,20 +28,17 @@ const Sidebar = (props) => {
     <aside className="col col-2">
       <Navbar expand="md" className="flex-column fixed-left h-100">
         <Container className="flex-column align-items-start h-100 d-flex">
-          {/* Logo e pulsante hamburger */}
-          <div className="d-flex justify-content-between w-100">
-            <Link className="navbar-brand" to="/">
-              <img
-                src={props.logoImage}
-                alt="Spotify Logo"
-                width="131"
-                height="40"
-              />
-            </Link>
-            <Navbar.Toggle aria-controls="sidebar-nav" className="d-md-none" />
-          </div>
+          {/* Logo */}
+          <Link className="navbar-brand" to="/">
+            <img
+              src={props.logoImage}
+              alt="Spotify Logo"
+              width="131"
+              height="40"
+            />
+          </Link>
           
-          {/* Link di navigazione e barra di ricerca */}
+          {/* Link di navigazione e barra di ricerca SUBITO SOTTO IL LOGO */}
           <Nav className="flex-column w-100 mt-3">
             <Nav.Item className="my-2">
               <NavLink
@@ -92,6 +89,9 @@ const Sidebar = (props) => {
               </Form>
             </Nav.Item>
           </Nav>
+          
+          {/* Pulsante hamburger per mobile */}
+          <Navbar.Toggle aria-controls="sidebar-nav" className="d-md-none mt-2 align-self-end" />
           
           {/* buttons bottom sidebar */}
           <div className="nav-btn d-flex flex-column mx-auto mt-3 mb-3">
